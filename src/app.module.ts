@@ -1,9 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { FinancesModule } from './finances/finances.module';
-import { Finance } from './finances/finances.entity';
 import { ContasModule } from './contas/contas.module';
+import { Contas } from './contas/contas.entity';
 
 @Module({
   imports: [
@@ -19,12 +18,11 @@ import { ContasModule } from './contas/contas.module';
         username: configService.get('DB_USERNAME'),
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_DATABASE'),
-        entities: [Finance],
+        entities: [Contas],
         synchronize: true,
       }),
       inject: [ConfigService],
     }),
-    FinancesModule,
     ContasModule,
   ],
 })

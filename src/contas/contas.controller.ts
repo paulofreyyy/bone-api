@@ -22,12 +22,12 @@ export class ContasController {
         return this.contasService.findOne(+id);
     }
 
-    @Patch()
+    @Patch(':id')
     update(@Param('id') id: string, @Body() updateContasDto: UpdateContasDto){
         return this.contasService.update(+id, updateContasDto);
     }
 
-    @Delete()
+    @Delete(':id')
     remove(@Param("id") id: string){
         return this.contasService.remove(+id);
     }
