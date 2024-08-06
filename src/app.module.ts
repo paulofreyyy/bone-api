@@ -3,6 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { FinancesModule } from './finances/finances.module';
 import { Finance } from './finances/finances.entity';
+import { ContasModule } from './contas/contas.module';
 
 @Module({
   imports: [
@@ -24,6 +25,7 @@ import { Finance } from './finances/finances.entity';
       inject: [ConfigService],
     }),
     FinancesModule,
+    ContasModule,
   ],
 })
 export class AppModule {}
