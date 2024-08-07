@@ -8,6 +8,9 @@ export class Contas {
     @Column()
     descricao: string;
 
+    @Column()
+    isFixa: boolean;
+
     @Column('decimal')
     valor: number;
 
